@@ -1,68 +1,92 @@
 var computerPoints = 0;
 var humanPoints = 0;
 var result;
-function getHumanChoice(){
-    let answer = prompt("Please enter the number you would like to FizzBuzz up to: ");
-    
-    return answer;
-}
+
+const human = document.querySelector(".scoreHuman");
+const computer = document.querySelector(".scoreComputer");
+const whoWin = document.querySelector(".whoWin");
+
+human.textContent = computerPoints;
+computer.textContent = humanPoints;
+
+
 function getComputerChoice(){
     return Math.floor(Math.random() * 3);
 }
-// rock 0 paper 1 scissor 2
+
 function playRound(a,b){
-    var c;
-    if(a === 'rock' && b === 0){
-        console.log("TIE");
-        c = 0;
-    }
-    if(a === 'rock' && b === 1){
-        console.log("Computer wins");
-        c = 2;
-    }
-    if(a === 'rock' && b === 2){
-        console.log("Human wins");
-        c = 1;
-    }
-    if(a === 'scissor' && b === 0){
-        console.log("Computer wins");
-        c = 2;
-    }
-    if(a === 'scissor' && b === 1){
-        console.log("Human wins");
-        c = 1;
-    }
-    if(a === 'scissor' && b === 2){
-        console.log("TIE");
-        c = 0;
-    }
-    if(a === 'paper' && b === 0){
-        console.log("Computer wins")
-        c = 2;
-    }
-    if (a === 'paper' && b === 1) {
-        console.log("Tie");
-        c = 0;
-    }
-    if(a === 'paper' && b === 2){
-        console.log("Human wins");
-        c = 1;
-    }
-    return c;
-}
-while(computerPoints != 5 && humanPoints != 5){
-    result = playRound(getHumanChoice(),getComputerChoice())
-    if (2 === result) {
-        computerPoints = computerPoints + 1;
-    }
-    else{
-        if (1 === result) {
-            humanPoints = humanPoints + 1;
+    if(humanPoints !== 5 && computerPoints !== 5){
+        if(a === 0 && b === 0){
+            console.log("Tie");
+            whoWin.textContent = "Rock vs Rock.Tie";
+        }
+        if(a === 0 && b === 1){
+            console.log("Computer wins");
+        
+            computerPoints = computerPoints + 1;
+            computer.textContent = computerPoints;
+            whoWin.textContent = "Rock vs Paper.You lost!";
+        }
+        if(a === 0 && b === 2){
+            console.log("Human wins");
+            humanPoints = humanPoints +1;
+            human.textContent = humanPoints;
+            whoWin.textContent = "Rock vs Scissor.You Won!";
+        }
+        if(a === 2 && b === 0){
+            console.log("Computer wins");
+            
+            computerPoints = computerPoints + 1;
+            computer.textContent = computerPoints;
+            whoWin.textContent = "Scissor vs Rock.You lost!";
+        }
+        if(a === 2 && b === 1){
+            console.log("Human wins");
+            humanPoints = humanPoints +1;
+            human.textContent = humanPoints;
+            whoWin.textContent = "Scissor vs Paper.You won!";
+            
+        }
+        if(a === 2 && b === 2){
+            console.log("TIE");
+            whoWin.textContent = "Scissor vs Scissor.Tie";
+            
+        }
+        if(a === 1 && b === 0){
+            console.log("Computer wins")
+            computerPoints = computerPoints + 1;
+            computer.textContent = computerPoints;
+            whoWin.textContent = "Paper vs Scissor.You lost";
+        }
+        if (a === 1 && b === 1) {
+            console.log("Tie");
+            whoWin.textContent = "Paper vs Paper.Tie";
+            
+        }
+        if(a === 1 && b === 2){
+            console.log("Human wins");
+            humanPoints = humanPoints +1;
+            human.textContent = humanPoints;
+            whoWin.textContent = "Paper vs Rock.You Won";
+            
+            
         }
     }
-    console.log(computerPoints);
-    console.log(humanPoints);
+    else{
+        if(humanPoints === 5){
+            whoWin.textContent = "Human won";
+            
+        }
+        else{
+            whoWin.textContent = "Computer won";
+        }
+            
+    }
+    
+    
 }
-        
+    
+
+
         
         

@@ -1,0 +1,8 @@
+[23:20:57 2024-06-04] FETCHING Version 2.36.12
+[23:20:57 2024-06-04] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.36.12/spicetify-2.36.12-linux-amd64.tar.gz
+[23:20:59 2024-06-04] EXTRACTING /home/leo/.spicetify/spicetify.tar.gz
+[23:20:59 2024-06-04] SETTING EXECUTABLE PERMISSIONS TO /home/leo/.spicetify/spicetify
+[23:20:59 2024-06-04] REMOVING /home/leo/.spicetify/spicetify.tar.gz
+[23:20:59 2024-06-04] spicetify path already set in /home/leo/.zshrc, continuing...
+[23:20:59 2024-06-04] spicetify v2.36.12 was installed successfully to /home/leo/.spicetify
+[23:20:59 2024-06-04] Run 'spicetify --help' to get started
